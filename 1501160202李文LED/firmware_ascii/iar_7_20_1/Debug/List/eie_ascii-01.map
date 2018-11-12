@@ -1,0 +1,914 @@
+###############################################################################
+#
+# IAR ELF Linker V8.20.1.14183/W32 for ARM                29/Oct/2018  14:10:05
+# Copyright 2007-2017 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Exe\eie_ascii-01.out
+#    Map file     =  
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\List\eie_ascii-01.map
+#    Command line =  
+#        -f C:\Users\BAYE\AppData\Local\Temp\EWEE27.tmp
+#        (C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\adc12.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\ant.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\ant_api.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\board_cstartup_iar.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\buttons.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\core_cm3.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\debug.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\eief1-pcb-01.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\exceptions.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\interrupts.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\lcd_nhd-c0220biz.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\leds.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\main.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\messaging.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\sam3u_i2c.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\sam3u_ssp.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\sam3u_uart.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\sdcard.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\timer.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\user_app1.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\user_app2.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\user_app3.o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj\utilities.o
+#        --redirect _Printf=_PrintfTiny --redirect _Scanf=_ScanfSmallNoMb -o
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Exe\eie_ascii-01.out
+#        --map
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\List\eie_ascii-01.map
+#        --log initialization,modules,sections --log_file
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\List\eie_ascii-01.log
+#        --config
+#        C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\..\..\firmware_common\sam3u2-flash.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__Heap_Handler  = DLMalloc
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The advanced heap was selected because the application calls memory
+allocation functions outside of system library functions, and there
+are calls to deallocation functions in the application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x00080000 { ro section .intvec };
+"P1":  place in [from 0x00080000 to 0x0009ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+"P2":  place in [from 0x20000000 to 0x20003fff] { rw, block CSTACK };
+define block HEAP with size = 16K, alignment = 8 { };
+"P3":  place in [from 0x20080000 to 0x20083fff] { block HEAP };
+initialize by copy { rw };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A0":                                       0xbc
+  .intvec                     0x00080000    0xbc  <Block>
+    .intvec          const    0x00080000    0xbc  board_cstartup_iar.o [1]
+                            - 0x000800bc    0xbc
+
+"P1":                                     0x62d6
+  .text              ro code  0x000800bc  0x14d8  dlmalloc.o [3]
+  .text              ro code  0x00081594     0x6  abort.o [3]
+  .text              ro code  0x0008159a    0x7a  lz77_init_single.o [4]
+  .text              ro code  0x00081614    0x2c  xgetmemchunk.o [3]
+  .text              ro code  0x00081640    0x14  exit.o [5]
+  .text              ro code  0x00081654  0x11ba  ant.o [1]
+  .rodata            const    0x0008280e     0x2  debug.o [1]
+  .text              ro code  0x00082810    0x5c  utilities.o [1]
+  .text              ro code  0x0008286c    0x76  ABImemcpy_unaligned.o [4]
+  .text              ro code  0x000828e2     0x2  exceptions.o [1]
+  .text              ro code  0x000828e4   0x728  debug.o [1]
+  .text              ro code  0x0008300c   0x924  sam3u_ssp.o [1]
+  .text              ro code  0x00083930     0x4  heaptramp0.o [3]
+  .text              ro code  0x00083934   0x2a0  messaging.o [1]
+  .text              ro code  0x00083bd4   0x560  sam3u_uart.o [1]
+  .text              ro code  0x00084134   0x37c  leds.o [1]
+  .text              ro code  0x000844b0    0x66  ABImemset.o [4]
+  .text              ro code  0x00084516     0x2  exceptions.o [1]
+  .text              ro code  0x00084518   0x7f8  sam3u_i2c.o [1]
+  .text              ro code  0x00084d10   0x3f0  eief1-pcb-01.o [1]
+  .text              ro code  0x00085100   0x280  buttons.o [1]
+  .text              ro code  0x00085380   0x1de  user_app1.o [1]
+  .text              ro code  0x0008555e     0x2  exceptions.o [1]
+  .text              ro code  0x00085560   0x1c0  interrupts.o [1]
+  .text              ro code  0x00085720   0x15a  adc12.o [1]
+  .text              ro code  0x0008587a     0x2  exceptions.o [1]
+  .text              ro code  0x0008587c   0x102  timer.o [1]
+  .text              ro code  0x0008597e     0x2  exceptions.o [1]
+  .text              ro code  0x00085980    0xe4  main.o [1]
+  .text              ro code  0x00085a64    0xda  lcd_nhd-c0220biz.o [1]
+  .text              ro code  0x00085b3e     0x2  exceptions.o [1]
+  .text              ro code  0x00085b40    0x28  ant_api.o [1]
+  .text              ro code  0x00085b68    0x4e  sdcard.o [1]
+  .text              ro code  0x00085bb6     0x2  exceptions.o [1]
+  .text              ro code  0x00085bb8    0x1a  user_app2.o [1]
+  .text              ro code  0x00085bd2     0x2  exceptions.o [1]
+  .text              ro code  0x00085bd4    0x1a  user_app3.o [1]
+  .text              ro code  0x00085bee     0x2  exceptions.o [1]
+  .rodata            const    0x00085bf0    0x50  debug.o [1]
+  .rodata            const    0x00085c40    0x48  debug.o [1]
+  .text              ro code  0x00085c88    0x40  zero_init3.o [4]
+  .rodata            const    0x00085cc8    0x2c  ant.o [1]
+  .text              ro code  0x00085cf4    0x28  data_init.o [4]
+  .rodata            const    0x00085d1c    0x24  ant.o [1]
+  .rodata            const    0x00085d40    0x24  ant.o [1]
+  .rodata            const    0x00085d64    0x24  debug.o [1]
+  .rodata            const    0x00085d88    0x24  debug.o [1]
+  .rodata            const    0x00085dac    0x24  debug.o [1]
+  .rodata            const    0x00085dd0    0x24  debug.o [1]
+  .rodata            const    0x00085df4    0x24  debug.o [1]
+  .rodata            const    0x00085e18    0x24  debug.o [1]
+  .rodata            const    0x00085e3c    0x24  debug.o [1]
+  .rodata            const    0x00085e60    0x24  debug.o [1]
+  .rodata            const    0x00085e84    0x24  debug.o [1]
+  .iar.init_table    const    0x00085ea8    0x20  - Linker created -
+  .rodata            const    0x00085ec8    0x20  ant.o [1]
+  .rodata            const    0x00085ee8    0x20  interrupts.o [1]
+  .rodata            const    0x00085f08    0x20  sam3u_uart.o [1]
+  .text              ro code  0x00085f28    0x1e  cmain.o [4]
+  .text              ro code  0x00085f46     0x2  exceptions.o [1]
+  .text              ro code  0x00085f48    0x14  board_cstartup_iar.o [1]
+  .text              ro code  0x00085f5c     0x4  exit.o [3]
+  .text              ro code  0x00085f60     0xa  cexit.o [4]
+  .text              ro code  0x00085f6a     0x2  exceptions.o [1]
+  .rodata            const    0x00085f6c    0x1c  adc12.o [1]
+  .rodata            const    0x00085f88    0x1c  ant.o [1]
+  .rodata            const    0x00085fa4    0x1c  debug.o [1]
+  .rodata            const    0x00085fc0    0x18  ant.o [1]
+  .rodata            const    0x00085fd8    0x18  ant.o [1]
+  .rodata            const    0x00085ff0    0x18  lcd_nhd-c0220biz.o [1]
+  .rodata            const    0x00086008    0x18  sdcard.o [1]
+  .rodata            const    0x00086020    0x18  timer.o [1]
+  .rodata            const    0x00086038    0x14  ant.o [1]
+  .rodata            const    0x0008604c    0x14  ant.o [1]
+  .rodata            const    0x00086060    0x14  ant.o [1]
+  .rodata            const    0x00086074    0x14  ant.o [1]
+  .rodata            const    0x00086088    0x14  debug.o [1]
+  .rodata            const    0x0008609c    0x10  ant.o [1]
+  .rodata            const    0x000860ac    0x10  ant_api.o [1]
+  .rodata            const    0x000860bc    0x10  buttons.o [1]
+  .rodata            const    0x000860cc     0xc  ant.o [1]
+  .rodata            const    0x000860d8     0xc  debug.o [1]
+  .rodata            const    0x000860e4     0xc  debug.o [1]
+  .text              ro code  0x000860f0     0xc  cstartup_M.o [4]
+  .rodata            const    0x000860fc     0x8  lcd_nhd-c0220biz.o [1]
+  .text              ro code  0x00086104     0x4  exceptions.o [1]
+  .text              ro code  0x00086108     0x2  exceptions.o [1]
+  .text              ro code  0x0008610a     0x2  exceptions.o [1]
+  .text              ro code  0x0008610c     0x2  exceptions.o [1]
+  .text              ro code  0x0008610e     0x2  exceptions.o [1]
+  .text              ro code  0x00086110     0x2  exceptions.o [1]
+  .text              ro code  0x00086112     0x2  exceptions.o [1]
+  .text              ro code  0x00086114     0x2  exceptions.o [1]
+  .text              ro code  0x00086116     0x2  exceptions.o [1]
+  .text              ro code  0x00086118     0x2  exceptions.o [1]
+  .text              ro code  0x0008611a     0x2  exceptions.o [1]
+  .text              ro code  0x0008611c     0x2  exceptions.o [1]
+  .text              ro code  0x0008611e     0x2  exceptions.o [1]
+  .text              ro code  0x00086120     0x2  exceptions.o [1]
+  .text              ro code  0x00086122     0x2  exceptions.o [1]
+  .text              ro code  0x00086124     0x2  exceptions.o [1]
+  .text              ro code  0x00086126     0x2  exceptions.o [1]
+  .text              ro code  0x00086128     0x2  timer.o [1]
+  .rodata            const    0x0008612a     0x0  zero_init3.o [4]
+  .rodata            const    0x0008612a     0x0  lz77_init_single.o [4]
+  Initializer bytes  const    0x0008612a   0x268  <for P2-1>
+                            - 0x00086392  0x62d6
+
+"P2", part 1 of 3:                         0x3aa
+  P2-1                        0x20000000   0x3aa  <Init block>
+    .data            inited   0x20000000     0x4  adc12.o [1]
+    .data            inited   0x20000004     0x8  ant.o [1]
+    .data            inited   0x2000000c     0x8  ant.o [1]
+    .data            inited   0x20000014    0x18  ant.o [1]
+    .data            inited   0x2000002c    0x18  ant.o [1]
+    .data            inited   0x20000044    0x28  ant.o [1]
+    .data            inited   0x2000006c    0x18  ant.o [1]
+    .data            inited   0x20000084    0x14  ant.o [1]
+    .data            inited   0x20000098    0x18  ant.o [1]
+    .data            inited   0x200000b0    0x20  ant.o [1]
+    .data            inited   0x200000d0    0x40  ant.o [1]
+    .data            inited   0x20000110     0x8  ant.o [1]
+    .data            inited   0x20000118    0x10  ant.o [1]
+    .data            inited   0x20000128    0x50  ant.o [1]
+    .data            inited   0x20000178    0x20  ant.o [1]
+    .data            inited   0x20000198     0x8  buttons.o [1]
+    .data            inited   0x200001a0    0x14  buttons.o [1]
+    .data            inited   0x200001b4    0x40  debug.o [1]
+    .data            inited   0x200001f4    0x44  debug.o [1]
+    .data            inited   0x20000238     0x4  debug.o [1]
+    .data            inited   0x2000023c    0x20  debug.o [1]
+    .data            inited   0x2000025c     0x8  debug.o [1]
+    .data            inited   0x20000264    0x14  debug.o [1]
+    .data            inited   0x20000278    0x18  debug.o [1]
+    .data            inited   0x20000290    0x20  eief1-pcb-01.o [1]
+    .data            inited   0x200002b0    0x2c  leds.o [1]
+    .data            inited   0x200002dc    0x70  leds.o [1]
+    .data            inited   0x2000034c    0x18  leds.o [1]
+    .data            inited   0x20000364     0x4  messaging.o [1]
+    .data            inited   0x20000368    0x18  sam3u_ssp.o [1]
+    .data            inited   0x20000380    0x18  sam3u_ssp.o [1]
+    .data            inited   0x20000398     0x8  utilities.o [1]
+    .data            inited   0x200003a0     0x8  utilities.o [1]
+    .data            inited   0x200003a8     0x2  interrupts.o [1]
+                            - 0x200003aa   0x3aa
+
+"P2", part 2 of 3:                        0x14e4
+  .bss               zero     0x200003ac   0x900  messaging.o [1]
+  .bss               zero     0x20000cac   0x300  messaging.o [1]
+  .bss               zero     0x20000fac   0x1d8  dlmalloc.o [3]
+  .bss               zero     0x20001184   0x100  ant.o [1]
+  .bss               zero     0x20001284   0x100  sam3u_i2c.o [1]
+  .bss               zero     0x20001384    0xa0  ant.o [1]
+  .bss               zero     0x20001424    0x80  debug.o [1]
+  .bss               zero     0x200014a4    0x80  debug.o [1]
+  .bss               zero     0x20001524    0x40  debug.o [1]
+  .bss               zero     0x20001564    0x38  sam3u_ssp.o [1]
+  .bss               zero     0x2000159c    0x38  sam3u_ssp.o [1]
+  .bss               zero     0x200015d4    0x38  sam3u_ssp.o [1]
+  .bss               zero     0x2000160c    0x24  ant.o [1]
+  .bss               zero     0x20001630    0x24  sam3u_uart.o [1]
+  .bss               zero     0x20001654    0x24  sam3u_uart.o [1]
+  .bss               zero     0x20001678    0x24  sam3u_uart.o [1]
+  .bss               zero     0x2000169c    0x24  sam3u_uart.o [1]
+  .bss               zero     0x200016c0    0x20  adc12.o [1]
+  .bss               zero     0x200016e0    0x18  dlmalloc.o [3]
+  .bss               zero     0x200016f8    0x10  buttons.o [1]
+  .bss               zero     0x20001708    0x10  buttons.o [1]
+  .bss               zero     0x20001718    0x10  sam3u_i2c.o [1]
+  .bss               zero     0x20001728     0xc  ant.o [1]
+  .bss               zero     0x20001734     0x4  adc12.o [1]
+  .bss               zero     0x20001738     0x4  ant.o [1]
+  .bss               zero     0x2000173c     0x4  ant.o [1]
+  .bss               zero     0x20001740     0x4  ant.o [1]
+  .bss               zero     0x20001744     0x4  ant.o [1]
+  .bss               zero     0x20001748     0x4  ant.o [1]
+  .bss               zero     0x2000174c     0x4  ant.o [1]
+  .bss               zero     0x20001750     0x4  ant.o [1]
+  .bss               zero     0x20001754     0x4  ant.o [1]
+  .bss               zero     0x20001758     0x4  ant.o [1]
+  .bss               zero     0x2000175c     0x4  ant.o [1]
+  .bss               zero     0x20001760     0x4  ant.o [1]
+  .bss               zero     0x20001764     0x4  ant.o [1]
+  .bss               zero     0x20001768     0x4  ant.o [1]
+  .bss               zero     0x2000176c     0x4  ant.o [1]
+  .bss               zero     0x20001770     0x4  ant.o [1]
+  .bss               zero     0x20001774     0x4  ant.o [1]
+  .bss               zero     0x20001778     0x4  ant.o [1]
+  .bss               zero     0x2000177c     0x4  ant.o [1]
+  .bss               zero     0x20001780     0x4  ant.o [1]
+  .bss               zero     0x20001784     0x4  ant.o [1]
+  .bss               zero     0x20001788     0x4  ant_api.o [1]
+  .bss               zero     0x2000178c     0x4  buttons.o [1]
+  .bss               zero     0x20001790     0x4  buttons.o [1]
+  .bss               zero     0x20001794     0x4  buttons.o [1]
+  .bss               zero     0x20001798     0x4  buttons.o [1]
+  .bss               zero     0x2000179c     0x4  buttons.o [1]
+  .bss               zero     0x200017a0     0x4  debug.o [1]
+  .bss               zero     0x200017a4     0x4  debug.o [1]
+  .bss               zero     0x200017a8     0x4  debug.o [1]
+  .bss               zero     0x200017ac     0x4  debug.o [1]
+  .bss               zero     0x200017b0     0x4  debug.o [1]
+  .bss               zero     0x200017b4     0x4  debug.o [1]
+  .bss               zero     0x200017b8     0x4  debug.o [1]
+  .bss               zero     0x200017bc     0x4  eief1-pcb-01.o [1]
+  .bss               zero     0x200017c0     0x4  eief1-pcb-01.o [1]
+  .bss               zero     0x200017c4     0x4  eief1-pcb-01.o [1]
+  .bss               zero     0x200017c8     0x4  eief1-pcb-01.o [1]
+  .bss               zero     0x200017cc     0x4  lcd_nhd-c0220biz.o [1]
+  .bss               zero     0x200017d0     0x4  lcd_nhd-c0220biz.o [1]
+  .bss               zero     0x200017d4     0x4  main.o [1]
+  .bss               zero     0x200017d8     0x4  main.o [1]
+  .bss               zero     0x200017dc     0x4  messaging.o [1]
+  .bss               zero     0x200017e0     0x4  messaging.o [1]
+  .bss               zero     0x200017e4     0x4  messaging.o [1]
+  .bss               zero     0x200017e8     0x4  messaging.o [1]
+  .bss               zero     0x200017ec     0x4  sam3u_i2c.o [1]
+  .bss               zero     0x200017f0     0x4  sam3u_i2c.o [1]
+  .bss               zero     0x200017f4     0x4  sam3u_i2c.o [1]
+  .bss               zero     0x200017f8     0x4  sam3u_i2c.o [1]
+  .bss               zero     0x200017fc     0x4  sam3u_i2c.o [1]
+  .bss               zero     0x20001800     0x4  sam3u_i2c.o [1]
+  .bss               zero     0x20001804     0x4  sam3u_ssp.o [1]
+  .bss               zero     0x20001808     0x4  sam3u_ssp.o [1]
+  .bss               zero     0x2000180c     0x4  sam3u_ssp.o [1]
+  .bss               zero     0x20001810     0x4  sam3u_ssp.o [1]
+  .bss               zero     0x20001814     0x4  sam3u_ssp.o [1]
+  .bss               zero     0x20001818     0x4  sam3u_ssp.o [1]
+  .bss               zero     0x2000181c     0x4  sam3u_ssp.o [1]
+  .bss               zero     0x20001820     0x4  sam3u_ssp.o [1]
+  .bss               zero     0x20001824     0x4  sam3u_ssp.o [1]
+  .bss               zero     0x20001828     0x4  sam3u_ssp.o [1]
+  .bss               zero     0x2000182c     0x4  sam3u_ssp.o [1]
+  .bss               zero     0x20001830     0x4  sam3u_ssp.o [1]
+  .bss               zero     0x20001834     0x4  sam3u_uart.o [1]
+  .bss               zero     0x20001838     0x4  sam3u_uart.o [1]
+  .bss               zero     0x2000183c     0x4  sam3u_uart.o [1]
+  .bss               zero     0x20001840     0x4  sam3u_uart.o [1]
+  .bss               zero     0x20001844     0x4  sam3u_uart.o [1]
+  .bss               zero     0x20001848     0x4  sam3u_uart.o [1]
+  .bss               zero     0x2000184c     0x4  sam3u_uart.o [1]
+  .bss               zero     0x20001850     0x4  sam3u_uart.o [1]
+  .bss               zero     0x20001854     0x4  sam3u_uart.o [1]
+  .bss               zero     0x20001858     0x4  sam3u_uart.o [1]
+  .bss               zero     0x2000185c     0x4  sdcard.o [1]
+  .bss               zero     0x20001860     0x4  timer.o [1]
+  .bss               zero     0x20001864     0x4  timer.o [1]
+  .bss               zero     0x20001868     0x4  timer.o [1]
+  .bss               zero     0x2000186c     0x4  user_app1.o [1]
+  .bss               zero     0x20001870     0x4  user_app1.o [1]
+  .bss               zero     0x20001874     0x4  user_app2.o [1]
+  .bss               zero     0x20001878     0x4  user_app3.o [1]
+  .bss               zero     0x2000187c     0x4  xgetmemchunk.o [3]
+  .bss               zero     0x20001880     0x2  debug.o [1]
+  .bss               zero     0x20001882     0x1  adc12.o [1]
+  .bss               zero     0x20001883     0x1  ant.o [1]
+  .bss               zero     0x20001884     0x1  ant.o [1]
+  .bss               zero     0x20001885     0x1  ant.o [1]
+  .bss               zero     0x20001886     0x1  ant.o [1]
+  .bss               zero     0x20001887     0x1  debug.o [1]
+  .bss               zero     0x20001888     0x1  debug.o [1]
+  .bss               zero     0x20001889     0x1  debug.o [1]
+  .bss               zero     0x2000188a     0x1  messaging.o [1]
+  .bss               zero     0x2000188b     0x1  sam3u_i2c.o [1]
+  .bss               zero     0x2000188c     0x1  sam3u_i2c.o [1]
+  .bss               zero     0x2000188d     0x1  sam3u_i2c.o [1]
+  .bss               zero     0x2000188e     0x1  sam3u_uart.o [1]
+                            - 0x2000188f  0x14e3
+
+"P2", part 3 of 3:                        0x1000
+  CSTACK                      0x20001890  0x1000  <Block>
+    CSTACK           uninit   0x20001890  0x1000  <Block tail>
+                            - 0x20002890  0x1000
+
+"P3":                                     0x4000
+  HEAP                        0x20080000  0x4000  <Block>
+    HEAP             uninit   0x20080000  0x4000  <Block tail>
+                            - 0x20084000  0x4000
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x14e3:
+          0x200003ac  0x14e3
+
+Copy/lz77 (__iar_lz77_init_single3)
+    1 source range, total size 0x268 (65% of destination):
+          0x0008612a   0x268
+    1 destination range, total size 0x3aa:
+          0x20000000   0x3aa
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj: [1]
+    adc12.o                    346       30       41
+    ant.o                    4 538      597      952
+    ant_api.o                   40       16        4
+    board_cstartup_iar.o        20      188
+    buttons.o                  640       35       80
+    debug.o                  1 832      694      573
+    eief1-pcb-01.o           1 008       21       48
+    exceptions.o                58
+    interrupts.o               448       34        2
+    lcd_nhd-c0220biz.o         218       32        8
+    leds.o                     892      119      180
+    main.o                     228                 8
+    messaging.o                672        2    3 093
+    sam3u_i2c.o              2 040               299
+    sam3u_ssp.o              2 340       32      264
+    sam3u_uart.o             1 376       32      185
+    sdcard.o                    78       24        4
+    timer.o                    260       24       12
+    user_app1.o                478                 8
+    user_app2.o                 26                 4
+    user_app3.o                 26                 4
+    utilities.o                 92       10       16
+    ------------------------------------------------
+    Total:                  17 656    1 890    5 785
+
+command line: [2]
+    ------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    abort.o                      6
+    dlmalloc.o               5 336               496
+    exit.o                       4
+    heaptramp0.o                 4
+    xgetmemchunk.o              44                 4
+    ------------------------------------------------
+    Total:                   5 394               500
+
+rt7M_tl.a: [4]
+    ABImemcpy_unaligned.o      118
+    ABImemset.o                102
+    cexit.o                     10
+    cmain.o                     30
+    cstartup_M.o                12
+    data_init.o                 40
+    lz77_init_single.o         122
+    zero_init3.o                64
+    ------------------------------------------------
+    Total:                     498
+
+shb_l.a: [5]
+    exit.o                      20
+    ------------------------------------------------
+    Total:                      20
+
+    Linker created                       32   20 480
+----------------------------------------------------
+    Grand Total:            23 568    1 922   26 765
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x00085ea8          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x00085ec8          --   Gb  - Linker created -
+.intvec$$Base           0x00080000          --   Gb  - Linker created -
+.intvec$$Limit          0x000800bc          --   Gb  - Linker created -
+?main                   0x00085f29         Code  Gb  cmain.o [4]
+ADCC0_IrqHandler        0x000857d3   0x5e  Code  Gb  adc12.o [1]
+ADCC1_IrqHandler        0x00086123    0x2  Code  Wk  exceptions.o [1]
+Adc12DefaultCallback    0x000857d1    0x2  Code  Gb  adc12.o [1]
+Adc12Initialize         0x0008574d   0x76  Code  Gb  adc12.o [1]
+Adc12RunActiveState     0x000857c3    0xa  Code  Gb  adc12.o [1]
+Adc12SM_Idle            0x00085879    0x2  Code  Lc  adc12.o [1]
+Adc12_StateMachine      0x20001734    0x4  Data  Lc  adc12.o [1]
+Adc12_aeChannels        0x20000000    0x4  Data  Lc  adc12.o [1]
+Adc12_afCallbacks       0x200016c0   0x20  Data  Lc  adc12.o [1]
+Adc12_bAdcAvailable     0x20001882    0x1  Data  Lc  adc12.o [1]
+AddNewMessageStatus     0x00083b57   0x34  Code  Lc  messaging.o [1]
+AdvanceAntRxBufferCurrentChar
+                        0x000819c1   0x28  Code  Lc  ant.o [1]
+AdvanceAntRxBufferUnreadMsgPointer
+                        0x000819e9   0x28  Code  Lc  ant.o [1]
+AntAbortMessage         0x00081995   0x2c  Code  Lc  ant.o [1]
+AntApiInitialize        0x00085b41   0x12  Code  Gb  ant_api.o [1]
+AntApiRunActiveState    0x00085b53    0xa  Code  Gb  ant_api.o [1]
+AntApiSM_Idle           0x00085b5d    0x2  Code  Lc  ant_api.o [1]
+AntApi_StateMachine     0x20001788    0x4  Data  Lc  ant_api.o [1]
+AntCalculateTxChecksum  0x00082007   0x28  Code  Gb  ant.o [1]
+AntDeQueueOutgoingMessage
+                        0x000825e9   0x22  Code  Lc  ant.o [1]
+AntExpectResponse       0x00081edf   0xd8  Code  Gb  ant.o [1]
+AntInitialize           0x00081b1f  0x242  Code  Gb  ant.o [1]
+AntParseExtendedData    0x00081a11  0x10e  Code  Lc  ant.o [1]
+AntProcessMessage       0x0008207d  0x41a  Code  Lc  ant.o [1]
+AntQueueExtendedApplicationMessage
+                        0x0008251d   0xc8  Code  Lc  ant.o [1]
+AntRunActiveState       0x00081d61    0xc  Code  Gb  ant.o [1]
+AntRxFlowControlCallback
+                        0x00081fd1   0x36  Code  Gb  ant.o [1]
+AntRxMessage            0x00081751  0x244  Code  Lc  ant.o [1]
+AntSM_Idle              0x00082619   0x8e  Code  Gb  ant.o [1]
+AntSM_Idle::au8AntFlagAlert
+                        0x20000118   0x10  Data  Lc  ant.o [1]
+AntSM_Idle::au8AntFlagMessages
+                        0x20000128   0x50  Data  Lc  ant.o [1]
+AntSM_NoResponse        0x0008280d    0x2  Code  Gb  ant.o [1]
+AntSM_ReceiveMessage    0x000826b1   0x18  Code  Gb  ant.o [1]
+AntSM_TransmitMessage   0x000826f9   0x76  Code  Gb  ant.o [1]
+AntSM_TransmitMessage::au8TxTimeoutMsg
+                        0x20000178   0x20  Data  Lc  ant.o [1]
+AntSrdyPulse            0x00081727   0x2a  Code  Lc  ant.o [1]
+AntSyncSerialInitialize
+                        0x00081655   0xd2  Code  Lc  ant.o [1]
+AntTickExtended         0x00082497   0x6e  Code  Lc  ant.o [1]
+AntTxFlowControlCallback
+                        0x00081fb9   0x16  Code  Gb  ant.o [1]
+AntTxMessage            0x00081d6d  0x172  Code  Gb  ant.o [1]
+Ant_DebugProcessRxMessages
+                        0x20001784    0x4  Data  Lc  ant.o [1]
+Ant_DebugRxMessageCounter
+                        0x2000177c    0x4  Data  Lc  ant.o [1]
+Ant_DebugTotalRxMessages
+                        0x20001780    0x4  Data  Lc  ant.o [1]
+Ant_Ssp                 0x20001764    0x4  Data  Lc  ant.o [1]
+Ant_au8AntRxBuffer      0x20001184  0x100  Data  Lc  ant.o [1]
+Ant_pfnStateMachine     0x20001744    0x4  Data  Lc  ant.o [1]
+Ant_psDataOutgoingMsgList
+                        0x20001778    0x4  Data  Lc  ant.o [1]
+Ant_pu8AntRxBufferCurrentChar
+                        0x2000176c    0x4  Data  Lc  ant.o [1]
+Ant_pu8AntRxBufferNextChar
+                        0x20001768    0x4  Data  Lc  ant.o [1]
+Ant_pu8AntRxBufferUnreadMsg
+                        0x20001770    0x4  Data  Lc  ant.o [1]
+Ant_sSspConfig          0x2000160c   0x24  Data  Lc  ant.o [1]
+Ant_u32ApplicationMessageCount
+                        0x20001774    0x4  Data  Lc  ant.o [1]
+Ant_u32CurrentTxMessageToken
+                        0x20001760    0x4  Data  Lc  ant.o [1]
+Ant_u32RxByteCounter    0x20001754    0x4  Data  Lc  ant.o [1]
+Ant_u32RxTimeoutCounter
+                        0x20001758    0x4  Data  Lc  ant.o [1]
+Ant_u32RxTimer          0x20001748    0x4  Data  Lc  ant.o [1]
+Ant_u32TxByteCounter    0x20001750    0x4  Data  Lc  ant.o [1]
+Ant_u32TxTimer          0x2000174c    0x4  Data  Lc  ant.o [1]
+Ant_u32UnexpectedByteCounter
+                        0x2000175c    0x4  Data  Lc  ant.o [1]
+Ant_u8AntNewRxMessages  0x20001883    0x1  Data  Lc  ant.o [1]
+Ant_u8AntVersion        0x20001728    0xc  Data  Lc  ant.o [1]
+Ant_u8SlaveMissedMessageHigh
+                        0x20001884    0x1  Data  Lc  ant.o [1]
+Ant_u8SlaveMissedMessageLow
+                        0x20001886    0x1  Data  Lc  ant.o [1]
+Ant_u8SlaveMissedMessageMid
+                        0x20001885    0x1  Data  Lc  ant.o [1]
+Bsp_u32TimingViolationsCounter
+                        0x200017c4    0x4  Data  Lc  eief1-pcb-01.o [1]
+BusFault_Handler        0x00084517    0x2  Code  Wk  exceptions.o [1]
+ButtonInitialize        0x0008512d   0xac  Code  Gb  buttons.o [1]
+ButtonInitialize::au8ButtonStartupMsg
+                        0x200001a0   0x14  Data  Lc  buttons.o [1]
+ButtonRunActiveState    0x000851d9    0xa  Code  Gb  buttons.o [1]
+ButtonSM_ButtonActive   0x0008522d   0xfe  Code  Lc  buttons.o [1]
+ButtonSM_Idle           0x0008520d   0x20  Code  Lc  buttons.o [1]
+Button_abNewPress       0x2000179c    0x4  Data  Lc  buttons.o [1]
+Button_aeCurrentState   0x20001794    0x4  Data  Lc  buttons.o [1]
+Button_aeNewState       0x20001798    0x4  Data  Lc  buttons.o [1]
+Button_au32ButtonPins   0x000860bc   0x10  Data  Lc  buttons.o [1]
+Button_au32HoldTimeStart
+                        0x20001708   0x10  Data  Lc  buttons.o [1]
+Button_pfnStateMachine  0x20001790    0x4  Data  Lc  buttons.o [1]
+Buttons_asArray         0x20000198    0x8  Data  Lc  buttons.o [1]
+CSTACK$$Base            0x20001890          --   Gb  - Linker created -
+CSTACK$$Limit           0x20002890          --   Gb  - Linker created -
+ClockSetup              0x00084d11   0x8a  Code  Gb  eief1-pcb-01.o [1]
+DBGU_IrqHandler         0x00083ebb   0x1e  Code  Gb  sam3u_uart.o [1]
+DeQueueMessage          0x00083a67   0x54  Code  Gb  messaging.o [1]
+DebugCommandDummy       0x00082bdb   0x18  Code  Lc  debug.o [1]
+DebugCommandLedTestToggle
+                        0x00082bf3   0x84  Code  Lc  debug.o [1]
+DebugCommandPrepareList
+                        0x00082b3d   0x9e  Code  Lc  debug.o [1]
+DebugCommandSysTimeToggle
+                        0x00082cdd   0x4a  Code  Lc  debug.o [1]
+DebugInitialize         0x00082a4d   0xba  Code  Gb  debug.o [1]
+DebugLedTestCharacter   0x00082c77   0x66  Code  Lc  debug.o [1]
+DebugLineFeed           0x00082909   0x1c  Code  Gb  debug.o [1]
+DebugMon_Handler        0x0008597f    0x2  Code  Wk  exceptions.o [1]
+DebugPrintNumber        0x00082925   0xb2  Code  Gb  debug.o [1]
+DebugPrintf             0x000828e5   0x24  Code  Gb  debug.o [1]
+DebugRunActiveState     0x00082b07    0xc  Code  Gb  debug.o [1]
+DebugRxCallback         0x00082b15   0x28  Code  Gb  debug.o [1]
+DebugSM_CheckCmd        0x00082e81   0xb0  Code  Lc  debug.o [1]
+DebugSM_CheckCmd::au8CommandHeader
+                        0x2000025c    0x8  Data  Lc  debug.o [1]
+DebugSM_CheckCmd::au8InvalidCommand
+                        0x20000264   0x14  Data  Lc  debug.o [1]
+DebugSM_Error           0x00082f49   0x34  Code  Lc  debug.o [1]
+DebugSM_Error::au8DebugErrorMsg
+                        0x20000278   0x18  Data  Lc  debug.o [1]
+DebugSM_Idle            0x00082d29  0x158  Code  Lc  debug.o [1]
+DebugSM_Idle::au8BackspaceSequence
+                        0x20000238    0x4  Data  Lc  debug.o [1]
+DebugSM_Idle::au8CommandOverflow
+                        0x2000023c   0x20  Data  Lc  debug.o [1]
+DebugSM_ProcessCmd      0x00082f31   0x18  Code  Lc  debug.o [1]
+Debug_Uart              0x200017a8    0x4  Data  Lc  debug.o [1]
+Debug_au8CommandBuffer  0x20001524   0x40  Data  Lc  debug.o [1]
+Debug_au8Commands       0x200001b4   0x40  Data  Gb  debug.o [1]
+Debug_au8RxBuffer       0x200014a4   0x80  Data  Lc  debug.o [1]
+Debug_au8StartupMsg     0x200001f4   0x44  Data  Lc  debug.o [1]
+Debug_pfnStateMachine   0x200017a4    0x4  Data  Lc  debug.o [1]
+Debug_pu8CmdBufferNextChar
+                        0x200017b8    0x4  Data  Lc  debug.o [1]
+Debug_pu8RxBufferNextChar
+                        0x200017b0    0x4  Data  Lc  debug.o [1]
+Debug_pu8RxBufferParser
+                        0x200017b4    0x4  Data  Lc  debug.o [1]
+Debug_u16CommandSize    0x20001880    0x2  Data  Lc  debug.o [1]
+Debug_u32CurrentMessageToken
+                        0x200017ac    0x4  Data  Lc  debug.o [1]
+Debug_u8Command         0x20001889    0x1  Data  Lc  debug.o [1]
+Debug_u8ErrorCode       0x20001888    0x1  Data  Lc  debug.o [1]
+EFC0_IrqHandler         0x0008610b    0x2  Code  Wk  exceptions.o [1]
+EFC1_IrqHandler         0x0008610d    0x2  Code  Wk  exceptions.o [1]
+G_abButtonDebounceActive
+                        0x2000178c    0x4  Data  Gb  buttons.o [1]
+G_asAntChannelConfiguration
+                        0x20001384   0xa0  Data  Gb  ant.o [1]
+G_au32ButtonDebounceTimeStart
+                        0x200016f8   0x10  Data  Gb  buttons.o [1]
+G_au8ANTGetVersion      0x20000110    0x8  Data  Gb  ant.o [1]
+G_au8AntMessageAssign   0x20000014   0x18  Data  Gb  ant.o [1]
+G_au8AntMessageClose    0x2000006c   0x18  Data  Gb  ant.o [1]
+G_au8AntMessageFail     0x2000000c    0x8  Data  Gb  ant.o [1]
+G_au8AntMessageInit     0x20000098   0x18  Data  Gb  ant.o [1]
+G_au8AntMessageInitFail
+                        0x200000b0   0x20  Data  Gb  ant.o [1]
+G_au8AntMessageNoAnt    0x200000d0   0x40  Data  Gb  ant.o [1]
+G_au8AntMessageOk       0x20000004    0x8  Data  Gb  ant.o [1]
+G_au8AntMessageOpen     0x20000084   0x14  Data  Gb  ant.o [1]
+G_au8AntMessageUnassign
+                        0x2000002c   0x18  Data  Gb  ant.o [1]
+G_au8AntMessageUnhandled
+                        0x20000044   0x28  Data  Gb  ant.o [1]
+G_au8DebugScanfBuffer   0x20001424   0x80  Data  Gb  debug.o [1]
+G_au8MessageOFF         0x200003a0    0x8  Data  Gb  utilities.o [1]
+G_au8MessageON          0x20000398    0x8  Data  Gb  utilities.o [1]
+G_sAntApplicationMsgList
+                        0x20001740    0x4  Data  Gb  ant.o [1]
+G_stMessageResponse     0x2000173c    0x4  Data  Gb  ant.o [1]
+G_u32AntFlags           0x20001738    0x4  Data  Gb  ant.o [1]
+G_u32ApplicationFlags   0x200017d8    0x4  Data  Gb  main.o [1]
+G_u32DebugFlags         0x200017a0    0x4  Data  Gb  debug.o [1]
+G_u32MessagingFlags     0x200017dc    0x4  Data  Gb  messaging.o [1]
+G_u32Ssp1ApplicationFlags
+                        0x20001804    0x4  Data  Gb  sam3u_ssp.o [1]
+G_u32Ssp2ApplicationFlags
+                        0x20001808    0x4  Data  Gb  sam3u_ssp.o [1]
+G_u32SystemFlags        0x200017d4    0x4  Data  Gb  main.o [1]
+G_u32SystemTime1ms      0x200017bc    0x4  Data  Gb  eief1-pcb-01.o [1]
+G_u32SystemTime1s       0x200017c0    0x4  Data  Gb  eief1-pcb-01.o [1]
+G_u32Uart0ApplicationFlags
+                        0x20001838    0x4  Data  Gb  sam3u_uart.o [1]
+G_u32UartApplicationFlags
+                        0x20001834    0x4  Data  Gb  sam3u_uart.o [1]
+G_u8DebugScanfCharCount
+                        0x20001887    0x1  Data  Gb  debug.o [1]
+GetButtonBitLocation    0x000851e3   0x28  Code  Gb  buttons.o [1]
+GpioSetup               0x00084e45   0xea  Code  Gb  eief1-pcb-01.o [1]
+HDMA_IrqHandler         0x00086125    0x2  Code  Wk  exceptions.o [1]
+HEAP$$Base              0x20080000          --   Gb  - Linker created -
+HEAP$$Limit             0x20084000          --   Gb  - Linker created -
+HSMC4_IrqHandler        0x0008610f    0x2  Code  Wk  exceptions.o [1]
+HardFault_Handler       0x000855d7   0x34  Code  Gb  interrupts.o [1]
+HexToASCIICharLower     0x00082841   0x28  Code  Gb  utilities.o [1]
+InterruptSetup          0x0008558d   0x4a  Code  Gb  interrupts.o [1]
+IrqHandlerNotUsed       0x00086105    0x2  Code  Gb  exceptions.o [1]
+IsTimeUp                0x00082811   0x30  Code  Gb  utilities.o [1]
+LcdInitialize           0x00085a65   0xb2  Code  Gb  lcd_nhd-c0220biz.o [1]
+LcdRunActiveState       0x00085b17    0xa  Code  Gb  lcd_nhd-c0220biz.o [1]
+LcdSM_Idle              0x00085b3d    0x2  Code  Gb  lcd_nhd-c0220biz.o [1]
+Lcd_StateMachine        0x200017cc    0x4  Data  Lc  lcd_nhd-c0220biz.o [1]
+Lcd_u32Timer            0x200017d0    0x4  Data  Lc  lcd_nhd-c0220biz.o [1]
+LedInitialize           0x00084259   0xb2  Code  Gb  leds.o [1]
+LedInitialize::au8LedStartupMsg
+                        0x2000034c   0x18  Data  Lc  leds.o [1]
+LedOff                  0x0008419b   0x5a  Code  Gb  leds.o [1]
+LedOn                   0x00084135   0x66  Code  Gb  leds.o [1]
+LedPWM                  0x00084219   0x40  Code  Gb  leds.o [1]
+LedToggle               0x000841f5   0x24  Code  Gb  leds.o [1]
+LedUpdate               0x0008430b  0x186  Code  Gb  leds.o [1]
+Led_au32BitPositions    0x200002b0   0x2c  Data  Lc  leds.o [1]
+Leds_asLedArray         0x200002dc   0x70  Data  Lc  leds.o [1]
+MCI0_IrqHandler         0x00086115    0x2  Code  Wk  exceptions.o [1]
+MemManage_Handler       0x000828e3    0x2  Code  Wk  exceptions.o [1]
+MessagingIdle           0x00083b8d   0x1c  Code  Gb  messaging.o [1]
+MessagingIdle::u32CleaningTime
+                        0x20000364    0x4  Data  Lc  messaging.o [1]
+MessagingInitialize     0x00083abb   0x76  Code  Gb  messaging.o [1]
+MessagingRunActiveState
+                        0x00083b31    0xa  Code  Gb  messaging.o [1]
+Messaging_pfnStateMachine
+                        0x200017e0    0x4  Data  Lc  messaging.o [1]
+Msg_Pool                0x200003ac  0x900  Data  Lc  messaging.o [1]
+Msg_StatusQueue         0x20000cac  0x300  Data  Lc  messaging.o [1]
+Msg_pNextStatus         0x200017e8    0x4  Data  Lc  messaging.o [1]
+Msg_u32Token            0x200017e4    0x4  Data  Lc  messaging.o [1]
+Msg_u8QueuedMessageCount
+                        0x2000188a    0x1  Data  Lc  messaging.o [1]
+NMI_Handler             0x00086107    0x2  Code  Wk  exceptions.o [1]
+NVIC_ClearPendingIRQ    0x00085737   0x16  Code  Lc  adc12.o [1]
+NVIC_ClearPendingIRQ    0x00085117   0x16  Code  Lc  buttons.o [1]
+NVIC_ClearPendingIRQ    0x00085577   0x16  Code  Lc  interrupts.o [1]
+NVIC_ClearPendingIRQ    0x00084531   0x18  Code  Lc  sam3u_i2c.o [1]
+NVIC_ClearPendingIRQ    0x00083025   0x18  Code  Lc  sam3u_ssp.o [1]
+NVIC_ClearPendingIRQ    0x00083bed   0x18  Code  Lc  sam3u_uart.o [1]
+NVIC_ClearPendingIRQ    0x00085893   0x16  Code  Lc  timer.o [1]
+NVIC_DisableIRQ         0x00085561   0x16  Code  Lc  interrupts.o [1]
+NVIC_EnableIRQ          0x00085721   0x16  Code  Lc  adc12.o [1]
+NVIC_EnableIRQ          0x00085101   0x16  Code  Lc  buttons.o [1]
+NVIC_EnableIRQ          0x00084519   0x18  Code  Lc  sam3u_i2c.o [1]
+NVIC_EnableIRQ          0x0008300d   0x18  Code  Lc  sam3u_ssp.o [1]
+NVIC_EnableIRQ          0x00083bd5   0x18  Code  Lc  sam3u_uart.o [1]
+NVIC_EnableIRQ          0x0008587d   0x16  Code  Lc  timer.o [1]
+PIOA_IrqHandler         0x00085647   0x50  Code  Gb  interrupts.o [1]
+PIOB_IrqHandler         0x00085697   0x50  Code  Gb  interrupts.o [1]
+PIOC_IrqHandler         0x00086111    0x2  Code  Wk  exceptions.o [1]
+PMC_IrqHandler          0x00086109    0x2  Code  Wk  exceptions.o [1]
+PWMSetupAudio           0x00084f2f   0x5c  Code  Gb  eief1-pcb-01.o [1]
+PWM_IrqHandler          0x00086121    0x2  Code  Wk  exceptions.o [1]
+PendSV_Handler          0x00085b3f    0x2  Code  Wk  exceptions.o [1]
+QueryMessageStatus      0x00083935   0x38  Code  Gb  messaging.o [1]
+QueueMessage            0x0008396d   0xfa  Code  Gb  messaging.o [1]
+RSTC_IrqHandler         0x00085bd3    0x2  Code  Wk  exceptions.o [1]
+RTC_IrqHandler          0x00085bef    0x2  Code  Wk  exceptions.o [1]
+RTT_IrqHandler          0x00085f47    0x2  Code  Wk  exceptions.o [1]
+Region$$Table$$Base     0x00085ea8          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00085ec8          --   Gb  - Linker created -
+SD_pfStateMachine       0x2000185c    0x4  Data  Lc  sdcard.o [1]
+SPI0_IrqHandler         0x00086119    0x2  Code  Wk  exceptions.o [1]
+SSC0_IrqHandler         0x0008611b    0x2  Code  Wk  exceptions.o [1]
+SSP_Peripheral0         0x20001564   0x38  Data  Lc  sam3u_ssp.o [1]
+SSP_Peripheral1         0x2000159c   0x38  Data  Lc  sam3u_ssp.o [1]
+SSP_Peripheral2         0x200015d4   0x38  Data  Lc  sam3u_ssp.o [1]
+SSP_psCurrentISR        0x2000181c    0x4  Data  Lc  sam3u_ssp.o [1]
+SSP_psCurrentSsp        0x20001818    0x4  Data  Lc  sam3u_ssp.o [1]
+SSP_pu32SspApplicationFlagsISR
+                        0x20001820    0x4  Data  Lc  sam3u_ssp.o [1]
+SSP_u32AntCounter       0x2000182c    0x4  Data  Lc  sam3u_ssp.o [1]
+SSP_u32Flags            0x20001814    0x4  Data  Lc  sam3u_ssp.o [1]
+SSP_u32Int1Count        0x20001824    0x4  Data  Lc  sam3u_ssp.o [1]
+SSP_u32Int2Count        0x20001828    0x4  Data  Lc  sam3u_ssp.o [1]
+SSP_u32RxCounter        0x20001830    0x4  Data  Lc  sam3u_ssp.o [1]
+SSP_u32Timer            0x20001810    0x4  Data  Lc  sam3u_ssp.o [1]
+SUPC_IrqHandler         0x00085bb7    0x2  Code  Wk  exceptions.o [1]
+SVC_Handler             0x0008587b    0x2  Code  Wk  exceptions.o [1]
+SdCardInitialize        0x00085b69   0x34  Code  Gb  sdcard.o [1]
+SdCardRunActiveState    0x00085b9d    0xc  Code  Gb  sdcard.o [1]
+SdCardSM_Disabled       0x00085bb5    0x2  Code  Lc  sdcard.o [1]
+SspGenericHandler       0x0008332f  0x39c  Code  Gb  sam3u_ssp.o [1]
+SspInitialize           0x0008319b   0xec  Code  Gb  sam3u_ssp.o [1]
+SspInitialize::au8SspStartupMessage
+                        0x20000368   0x18  Data  Lc  sam3u_ssp.o [1]
+SspManualMode           0x00083293   0x48  Code  Gb  sam3u_ssp.o [1]
+SspRequest              0x0008303d  0x12e  Code  Gb  sam3u_ssp.o [1]
+SspRunActiveState       0x00083287    0xc  Code  Gb  sam3u_ssp.o [1]
+SspSM_Idle              0x000836cd  0x1ee  Code  Gb  sam3u_ssp.o [1]
+SspSM_Idle::au8SspErrorInvalidSsp
+                        0x20000380   0x18  Data  Lc  sam3u_ssp.o [1]
+SspWriteData            0x0008316b   0x30  Code  Gb  sam3u_ssp.o [1]
+Ssp_pfnStateMachine     0x2000180c    0x4  Data  Lc  sam3u_ssp.o [1]
+SysTickSetup            0x00084d9b   0x22  Code  Gb  eief1-pcb-01.o [1]
+SysTick_Handler         0x0008560b   0x3c  Code  Gb  interrupts.o [1]
+SysTick_Handler::u16SecondCounter
+                        0x200003a8    0x2  Data  Lc  interrupts.o [1]
+SystemSleep             0x00084dbd   0x7a  Code  Gb  eief1-pcb-01.o [1]
+SystemSleep::au8TickWarningMessage
+                        0x20000290   0x20  Data  Lc  eief1-pcb-01.o [1]
+SystemSleep::u32PreviousSystemTick
+                        0x200017c8    0x4  Data  Lc  eief1-pcb-01.o [1]
+SystemStatusReport      0x000829d7   0x76  Code  Gb  debug.o [1]
+TC0_IrqHandler          0x0008611d    0x2  Code  Wk  exceptions.o [1]
+TC1_IrqHandler          0x00085915   0x24  Code  Gb  timer.o [1]
+TC2_IrqHandler          0x0008611f    0x2  Code  Wk  exceptions.o [1]
+TWI0                    0x200017f8    0x4  Data  Lc  sam3u_i2c.o [1]
+TWI0FillTxBuffer        0x00084807   0x96  Code  Lc  sam3u_i2c.o [1]
+TWI0WriteByte           0x00084549   0xd6  Code  Gb  sam3u_i2c.o [1]
+TWI0WriteData           0x0008461f   0xda  Code  Gb  sam3u_i2c.o [1]
+TWI0_IrqHandler         0x000848db   0xb6  Code  Gb  sam3u_i2c.o [1]
+TWI1_IrqHandler         0x00086117    0x2  Code  Wk  exceptions.o [1]
+TWIInitialize           0x000846f9  0x102  Code  Gb  sam3u_i2c.o [1]
+TWIManualMode           0x0008489d   0x3e  Code  Lc  sam3u_i2c.o [1]
+TWIRunActiveState       0x000847fb    0xc  Code  Gb  sam3u_i2c.o [1]
+TWISM_Error             0x00084c29   0x94  Code  Gb  sam3u_i2c.o [1]
+TWISM_Idle              0x00084991  0x14c  Code  Gb  sam3u_i2c.o [1]
+TWISM_Receiving         0x00084bb1   0x78  Code  Gb  sam3u_i2c.o [1]
+TWISM_Transmitting      0x00084add   0xd2  Code  Gb  sam3u_i2c.o [1]
+TWI_MessageBuffer       0x20001284  0x100  Data  Lc  sam3u_i2c.o [1]
+TWI_MessageBufferCurIndex
+                        0x2000188c    0x1  Data  Lc  sam3u_i2c.o [1]
+TWI_MessageBufferNextIndex
+                        0x2000188b    0x1  Data  Lc  sam3u_i2c.o [1]
+TWI_MessageQueueLength  0x2000188d    0x1  Data  Lc  sam3u_i2c.o [1]
+TWI_Peripheral0         0x20001718   0x10  Data  Lc  sam3u_i2c.o [1]
+TWI_StateMachine        0x200017ec    0x4  Data  Lc  sam3u_i2c.o [1]
+TWI_pu8CurrentTxData    0x20001800    0x4  Data  Lc  sam3u_i2c.o [1]
+TWI_u32CurrentBytesRemaining
+                        0x200017fc    0x4  Data  Lc  sam3u_i2c.o [1]
+TWI_u32Flags            0x200017f4    0x4  Data  Lc  sam3u_i2c.o [1]
+TWI_u32Timer            0x200017f0    0x4  Data  Lc  sam3u_i2c.o [1]
+TimerDefaultCallback    0x00086129    0x2  Code  Gb  timer.o [1]
+TimerInitialize         0x000858a9   0x62  Code  Gb  timer.o [1]
+TimerRunActiveState     0x0008590b    0xa  Code  Gb  timer.o [1]
+TimerSM_Idle            0x0008597d    0x2  Code  Lc  timer.o [1]
+Timer_StateMachine      0x20001860    0x4  Data  Lc  timer.o [1]
+Timer_u32Timer1Counter  0x20001868    0x4  Data  Lc  timer.o [1]
+UART_Peripheral         0x20001630   0x24  Data  Lc  sam3u_uart.o [1]
+UART_Peripheral0        0x20001654   0x24  Data  Lc  sam3u_uart.o [1]
+UART_Peripheral1        0x20001678   0x24  Data  Lc  sam3u_uart.o [1]
+UART_Peripheral2        0x2000169c   0x24  Data  Lc  sam3u_uart.o [1]
+UART_psCurrentISR       0x2000184c    0x4  Data  Lc  sam3u_uart.o [1]
+UART_psCurrentUart      0x20001848    0x4  Data  Lc  sam3u_uart.o [1]
+UART_pu32ApplicationFlagsISR
+                        0x20001850    0x4  Data  Lc  sam3u_uart.o [1]
+UART_u32Flags           0x20001844    0x4  Data  Lc  sam3u_uart.o [1]
+UART_u32Int0Count       0x20001858    0x4  Data  Lc  sam3u_uart.o [1]
+UART_u32IntCount        0x20001854    0x4  Data  Lc  sam3u_uart.o [1]
+UART_u32Timer           0x20001840    0x4  Data  Lc  sam3u_uart.o [1]
+UART_u8ActiveUarts      0x2000188e    0x1  Data  Lc  sam3u_uart.o [1]
+UDPD_IrqHandler         0x00086127    0x2  Code  Wk  exceptions.o [1]
+USART0_IrqHandler       0x00083ed9   0x1e  Code  Gb  sam3u_uart.o [1]
+USART1_IrqHandler       0x000832db   0x2a  Code  Gb  sam3u_ssp.o [1]
+USART2_IrqHandler       0x00083305   0x2a  Code  Gb  sam3u_ssp.o [1]
+USART3_IrqHandler       0x00086113    0x2  Code  Wk  exceptions.o [1]
+UartGenericHandler      0x00083ef7   0xf4  Code  Gb  sam3u_uart.o [1]
+UartInitialize          0x00083d75  0x106  Code  Gb  sam3u_uart.o [1]
+UartManualMode          0x00083e85   0x36  Code  Lc  sam3u_uart.o [1]
+UartRequest             0x00083c05  0x116  Code  Gb  sam3u_uart.o [1]
+UartRunActiveState      0x00083e7b    0xa  Code  Gb  sam3u_uart.o [1]
+UartSM_Idle             0x00083fed   0xd8  Code  Gb  sam3u_uart.o [1]
+UartWriteByte           0x00083d1b   0x2e  Code  Gb  sam3u_uart.o [1]
+UartWriteData           0x00083d49   0x2c  Code  Gb  sam3u_uart.o [1]
+Uart_pfnStateMachine    0x2000183c    0x4  Data  Lc  sam3u_uart.o [1]
+UpdateMessageStatus     0x00083b3b   0x1c  Code  Gb  messaging.o [1]
+UsageFault_Handler      0x0008555f    0x2  Code  Wk  exceptions.o [1]
+UserApp1Initialize      0x00085381   0x7c  Code  Gb  user_app1.o [1]
+UserApp1RunActiveState  0x000853fd  0x13c  Code  Gb  user_app1.o [1]
+UserApp1SM_Idle         0x0008555d    0x2  Code  Lc  user_app1.o [1]
+UserApp1_StateMachine   0x2000186c    0x4  Data  Lc  user_app1.o [1]
+UserApp2Initialize      0x00085bb9    0xa  Code  Gb  user_app2.o [1]
+UserApp2RunActiveState  0x00085bc3    0xa  Code  Gb  user_app2.o [1]
+UserApp2SM_Idle         0x00085bd1    0x2  Code  Lc  user_app2.o [1]
+UserApp2_StateMachine   0x20001874    0x4  Data  Lc  user_app2.o [1]
+UserApp3Initialize      0x00085bd5    0xa  Code  Gb  user_app3.o [1]
+UserApp3RunActiveState  0x00085bdf    0xa  Code  Gb  user_app3.o [1]
+UserApp3SM_Idle         0x00085bed    0x2  Code  Lc  user_app3.o [1]
+UserApp3_StateMachine   0x20001878    0x4  Data  Lc  user_app3.o [1]
+WDT_IrqHandler          0x00085f6b    0x2  Code  Wk  exceptions.o [1]
+WatchDogSetup           0x00084e37    0xe  Code  Gb  eief1-pcb-01.o [1]
+__ICFEDIT_intvec_start__ {Abs}
+                        0x00080000         Data  Gb  command line/config [2]
+__aeabi_memset          0x000844b1         Code  Gb  ABImemset.o [4]
+__cmain                 0x00085f29         Code  Gb  cmain.o [4]
+__data_GetMemChunk      0x00081615   0x2c  Code  Gb  xgetmemchunk.o [3]
+__data_GetMemChunk::start
+                        0x2000187c    0x4  Data  Lc  xgetmemchunk.o [3]
+__exit                  0x00081641   0x14  Code  Gb  exit.o [5]
+__iar_Memset            0x000844b1         Code  Gb  ABImemset.o [4]
+__iar_Memset_word       0x000844b9         Code  Gb  ABImemset.o [4]
+__iar_data_init3        0x00085cf5   0x28  Code  Gb  data_init.o [4]
+__iar_dlfree            0x0008109b  0x4f6  Code  Gb  dlmalloc.o [3]
+__iar_dlmalloc          0x00080de5  0x2b6  Code  Gb  dlmalloc.o [3]
+__iar_lz77_init_single3
+                        0x0008159b   0x7a  Code  Gb  lz77_init_single.o [4]
+__iar_program_start     0x000860f1         Code  Gb  cstartup_M.o [4]
+__iar_systems$$module {Abs}
+                        0x00000001         Data  Gb  command line/config [2]
+__iar_unaligned_memcpy  0x0008286d         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned_memcpy4
+                        0x0008288d         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned_memcpy8
+                        0x0008288d         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_zero_init3        0x00085c89   0x40  Code  Gb  zero_init3.o [4]
+__low_level_init        0x00085f49   0x14  Code  Gb  board_cstartup_iar.o [1]
+__vector_table          0x00080000   0xbc  Data  Gb  board_cstartup_iar.o [1]
+_call_main              0x00085f35         Code  Gb  cmain.o [4]
+_exit                   0x00085f61         Code  Gb  cexit.o [4]
+_gm_                    0x20000fac  0x1d8  Data  Lc  dlmalloc.o [3]
+_main                   0x00085f43         Code  Gb  cmain.o [4]
+abort                   0x00081595    0x6  Code  Gb  abort.o [3]
+add_segment             0x00080481  0x1fc  Code  Lc  dlmalloc.o [3]
+exit                    0x00085f5d    0x4  Code  Gb  exit.o [3]
+fpTimer1Callback        0x20001864    0x4  Data  Lc  timer.o [1]
+free                    0x00083931    0x4  Code  Gb  heaptramp0.o [3]
+init_mparams            0x000800db   0x32  Code  Lc  dlmalloc.o [3]
+init_top                0x0008010d   0x32  Code  Lc  dlmalloc.o [3]
+main                    0x00085981   0xe4  Code  Gb  main.o [1]
+mparams                 0x200016e0   0x18  Data  Lc  dlmalloc.o [3]
+prepend_alloc           0x0008013f  0x342  Code  Lc  dlmalloc.o [3]
+segment_holding         0x000800bd   0x1e  Code  Lc  dlmalloc.o [3]
+sys_alloc               0x00080683  0x160  Code  Lc  dlmalloc.o [3]
+sys_trim                0x000807e3   0x66  Code  Lc  dlmalloc.o [3]
+tmalloc_large           0x00080855  0x384  Code  Lc  dlmalloc.o [3]
+tmalloc_small           0x00080bd9  0x1fe  Code  Lc  dlmalloc.o [3]
+u16BlinkCount           0x20001870    0x4  Data  Lc  user_app1.o [1]
+
+
+[1] = C:\Users\BAYE\Documents\GitHub\Razor_Atmel\firmware_ascii\iar_7_20_1\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  23 568 bytes of readonly  code memory
+   1 922 bytes of readonly  data memory
+  26 765 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
